@@ -1,0 +1,96 @@
+<%- include('partials/head', { title: ticket.ticketNumber, extraCss: ['/css/admin.css'] }) %>
+<header class="admin-header">
+  <div class="admin-header__inner">
+    <div class="admin-brand">
+      <img src="/images/logo.svg" alt="Küchen Obermeier" />
+      <span>Ticketdetails</span>
+    </div>
+    <nav class="admin-nav">
+      <a href="/admin" class="button button--ghost">Zurück zur Übersicht</a>
+    </nav>
+  </div>
+</header>
+<main class="admin-main ticket-main">
+  <section class="admin-section">
+    <header class="ticket-header">
+      <div>
+        <h1>Ticket <%= ticket.ticketNumber %></h1>
+        <p>Auftrag: <strong><%= ticket.orderNumber %></strong></p>
+      </div>
+      <span class="status status--<%= ticket.status %>">
+        <% if (ticket.status === 'new') { %>Offen<% } %>
+        <% if (ticket.status === 'progress') { %>In Bearbeitung<% } %>
+        <% if (ticket.status === 'ordered') { %>Bestellt<% } %>
+        <% if (ticket.status === 'done') { %>Erledigt<% } %>
+      </span>
+    </header>
+    <dl class="ticket-meta">
+      <div>
+        <dt>Kunde</dt>
+        <dd><%= ticket.customerName %></dd>
+      </div>
+      <div>
+        <dt>Kontakt</dt>
+        <dd>
+          <a href="tel:<%= ticket.phone %>"><%= ticket.phone %></a><br />
+          <a href="mailto:<%= ticket.email %>"><%= ticket.email %></a>
+        </dd>
+      </div>
+      <div>
+        <dt>Bevorzugt</dt>
+        <dd><%= ticket.preferredContact === 'email' ? 'E-Mail' : 'Telefon' %></dd>
+      </div>
+      <div>
+        <dt>Eingang</dt>
+        <dd><%= dayjs(ticket.createdAt).format('DD.MM.YYYY HH:mm') %></dd>
+      </div>
+      <% if (ticket.installationDate) { %>
+        <div>
+          <dt>Montagedatum</dt>
+          <dd><%= dayjs(ticket.installationDate).format('DD.MM.YYYY') %></dd>
+        </div>
+      <% } %>
+    </dl>
+    <% if (ticket.notes) { %>
+      <section class="ticket-notes">
+        <h2>Hinweise</h2>
+        <p><%= ticket.notes %></p>
+      </section>
+    <% } %>
+    <section class="ticket-items">
+      <h2>Reklamationen</h2>
+      <ol>
+        <% ticket.items.forEach((item, index) => { %>
+          <li class="ticket-item">
+            <header>
+              <h3>Position <%= index + 1 %></h3>
+              <% if (item.area) { %><p class="ticket-item__area"><%= item.area %></p><% } %>
+            </header>
+            <p><%= item.description %></p>
+            <% if (item.photo) { %>
+              <figure>
+                <img src="<%= item.photo.path %>" alt="Foto zur Reklamation <%= index + 1 %>" />
+                <figcaption>Datei: <%= item.photo.originalName %></figcaption>
+              </figure>
+            <% } %>
+          </li>
+        <% }) %>
+      </ol>
+    </section>
+    <form method="post" action="/admin/tickets/<%= ticket.id %>/status" class="ticket-status-form">
+      <label for="status">Status ändern</label>
+      <div class="ticket-status-controls">
+        <select name="status" id="status">
+          <option value="new" <%= ticket.status === 'new' ? 'selected' : '' %>>Offen</option>
+          <option value="progress" <%= ticket.status === 'progress' ? 'selected' : '' %>>In Bearbeitung</option>
+          <option value="ordered" <%= ticket.status === 'ordered' ? 'selected' : '' %>>Bestellt</option>
+          <option value="done" <%= ticket.status === 'done' ? 'selected' : '' %>>Erledigt</option>
+        </select>
+        <button type="submit" class="button">Speichern</button>
+      </div>
+    </form>
+  </section>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/dayjs@1/dayjs.min.js" defer></script>
+</body>
+</html>
