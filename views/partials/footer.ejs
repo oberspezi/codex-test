@@ -1,0 +1,46 @@
+</main>
+<footer class="site-footer" id="kontakt">
+  <div class="container footer-grid">
+    <div>
+      <h3>Kontakt</h3>
+      <p>
+        Küchen Obermeier<br />
+        Landauer Straße 67<br />
+        94405 Landau a.d. Isar
+      </p>
+      <p>
+        Telefon: <a href="tel:+4999516377">09951 6377</a><br />
+        E-Mail: <a href="mailto:info@kuechen-obermeier.de">info@kuechen-obermeier.de</a>
+      </p>
+    </div>
+    <div>
+      <h3>Öffnungszeiten</h3>
+      <p>
+        Montag – Freitag: 9:00 – 17:00 Uhr<br />
+        Samstag: nach Vereinbarung
+      </p>
+      <p class="footer-cta">
+        <a class="button" href="/reklamation">Reklamation melden</a>
+      </p>
+    </div>
+    <div>
+      <h3>Folgen Sie uns</h3>
+      <ul class="social-links">
+        <li><a href="https://www.facebook.com/KuechenObermeier" target="_blank" rel="noopener">Facebook</a></li>
+        <li><a href="https://www.instagram.com/kuechenobermeier" target="_blank" rel="noopener">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <%= typeof year !== 'undefined' ? year : new Date().getFullYear() %> Küchen Obermeier. Alle Rechte vorbehalten.</p>
+    <p class="footer-meta"><a href="/login">Intern</a></p>
+  </div>
+</footer>
+<script src="/js/main.js" defer></script>
+<% if (typeof extraScripts !== 'undefined') { %>
+  <% extraScripts.forEach((src) => { %>
+    <script src="<%= src %>" defer></script>
+  <% }) %>
+<% } %>
+</body>
+</html>

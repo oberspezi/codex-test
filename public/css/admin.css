@@ -1,0 +1,253 @@
+:root {
+  color-scheme: light;
+}
+
+body {
+  background: #f6f6f8;
+}
+
+.admin-header {
+  background: #fff;
+  border-bottom: 1px solid rgba(140, 29, 64, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.admin-header__inner {
+  width: min(100% - 2rem, 1100px);
+  margin: 0 auto;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.admin-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.admin-brand img {
+  width: 140px;
+}
+
+.admin-main {
+  width: min(100% - 2rem, 1100px);
+  margin: 2rem auto 4rem;
+}
+
+.admin-section {
+  background: #fff;
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 2rem;
+}
+
+.admin-section__head {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.admin-section__head h1 {
+  margin: 0;
+}
+
+.admin-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.35rem 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
+
+.status--new {
+  background: rgba(220, 53, 69, 0.15);
+  color: #a3122a;
+}
+
+.status--progress,
+.status--ordered {
+  background: rgba(255, 193, 7, 0.2);
+  color: #9e6b00;
+}
+
+.status--done {
+  background: rgba(25, 135, 84, 0.16);
+  color: #11663f;
+}
+
+.admin-table-wrapper {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.admin-table th,
+.admin-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  text-align: left;
+  vertical-align: top;
+}
+
+.admin-table th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-muted);
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(140, 29, 64, 0.05);
+}
+
+.status-form {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.status-form select,
+.ticket-status-controls select {
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-border);
+  padding: 0.4rem 0.75rem;
+  font: inherit;
+}
+
+.status-row--new td:first-child {
+  border-left: 4px solid #a3122a;
+}
+
+.status-row--progress td:first-child,
+.status-row--ordered td:first-child {
+  border-left: 4px solid #e6a500;
+}
+
+.status-row--done td:first-child {
+  border-left: 4px solid #1d8c54;
+}
+
+.empty {
+  text-align: center;
+  color: var(--color-muted);
+  padding: 3rem 0;
+}
+
+.ticket-main {
+  margin-top: 3rem;
+}
+
+.ticket-header {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ticket-meta {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.ticket-meta dt {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.ticket-meta dd {
+  margin: 0;
+  font-weight: 600;
+}
+
+.ticket-items ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.ticket-item {
+  border: 1px solid rgba(140, 29, 64, 0.1);
+  border-radius: 1rem;
+  padding: 1.25rem;
+  display: grid;
+  gap: 1rem;
+  background: rgba(247, 208, 138, 0.08);
+}
+
+.ticket-item header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ticket-item figure {
+  margin: 0;
+}
+
+.ticket-item img {
+  border-radius: 0.75rem;
+  max-height: 240px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.ticket-status-form {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.ticket-status-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+@media (max-width: 720px) {
+  .admin-section {
+    padding: 1.5rem;
+  }
+
+  .admin-table th,
+  .admin-table td {
+    padding: 0.75rem;
+  }
+
+  .status-form {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .admin-header__inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
