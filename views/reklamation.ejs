@@ -1,0 +1,87 @@
+<%- include('partials/head', { title: 'Reklamation melden', extraCss: ['/css/reklamation.css'] }) %>
+<%- include('partials/header') %>
+<section class="reklamation-hero">
+  <div class="container">
+    <h1>Reklamation melden</h1>
+    <p>
+      Bitte füllen Sie das Formular vollständig aus. So können wir Ihre Reklamation schnell erfassen und uns mit
+      einem Lösungsvorschlag bei Ihnen melden.
+    </p>
+  </div>
+</section>
+<section class="reklamation-form-section">
+  <div class="container">
+    <form id="reklamationsForm" class="reklamation-form" enctype="multipart/form-data" novalidate>
+      <fieldset>
+        <legend>Ihre Kontaktdaten</legend>
+        <div class="form-grid">
+          <label>
+            Auftragsnummer*
+            <input type="text" name="orderNumber" autocomplete="off" required placeholder="z. B. 123456" />
+          </label>
+          <label>
+            Name*
+            <input type="text" name="customerName" autocomplete="name" required placeholder="Vor- und Nachname" />
+          </label>
+          <label>
+            Telefon*
+            <input type="tel" name="phone" autocomplete="tel" required placeholder="z. B. 09951 6377" />
+          </label>
+          <label>
+            E-Mail*
+            <input type="email" name="email" autocomplete="email" required placeholder="Ihre E-Mail-Adresse" />
+          </label>
+          <label>
+            Bevorzugte Rückmeldung
+            <select name="preferredContact">
+              <option value="telefon">Telefonisch</option>
+              <option value="email">Per E-Mail</option>
+            </select>
+          </label>
+          <label>
+            Liefer- / Montagedatum
+            <input type="date" name="installationDate" />
+          </label>
+        </div>
+        <label class="notes">
+          Hinweise für uns
+          <textarea name="notes" rows="3" placeholder="Optional: Hinweise zur Erreichbarkeit oder Terminen"></textarea>
+        </label>
+      </fieldset>
+      <fieldset class="items-fieldset">
+        <legend>Reklamationen</legend>
+        <p class="fieldset-hint">
+          Bitte beschreiben Sie jeden Mangel möglichst genau und fotografieren Sie den betroffenen Bereich. So können wir
+          Ersatzteile ohne Rückfragen bestellen.
+        </p>
+        <div id="itemsContainer" class="items-container"></div>
+        <button type="button" class="button button--ghost" id="addItemButton">Weitere Reklamation hinzufügen</button>
+      </fieldset>
+      <div class="form-actions">
+        <button type="submit" class="button">Absenden</button>
+        <p class="form-note">* Pflichtfelder</p>
+      </div>
+      <div class="form-feedback" role="status" aria-live="polite"></div>
+    </form>
+  </div>
+</section>
+<section class="how-it-works">
+  <div class="container">
+    <h2>So geht es nach Ihrer Meldung weiter</h2>
+    <ol class="steps">
+      <li>
+        <h3>1. Prüfung</h3>
+        <p>Wir prüfen Ihre Angaben und melden uns, falls noch Informationen fehlen.</p>
+      </li>
+      <li>
+        <h3>2. Bestellung</h3>
+        <p>Wir reklamieren die Teile beim Hersteller und informieren Sie über den Status.</p>
+      </li>
+      <li>
+        <h3>3. Terminvereinbarung</h3>
+        <p>Sobald die Teile da sind, vereinbaren wir einen passenden Montagetermin.</p>
+      </li>
+    </ol>
+  </div>
+</section>
+<%- include('partials/footer', { extraScripts: ['/js/reklamation.js'] }) %>
