@@ -32,7 +32,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© <%= typeof year !== 'undefined' ? year : new Date().getFullYear() %> Küchen Obermeier. Alle Rechte vorbehalten.</p>
+    <p>© <%= year || new Date().getFullYear() %> Küchen Obermeier. Alle Rechte vorbehalten.</p>
     <p class="footer-meta"><a href="/login">Intern</a></p>
   </div>
 </footer>
