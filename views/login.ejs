@@ -1,0 +1,26 @@
+<%- include('partials/head', { title: 'Intern' }) %>
+<main class="login-wrapper">
+  <section class="login-card">
+    <a class="login-logo" href="/">
+      <img src="/images/logo.svg" alt="Küchen Obermeier" />
+    </a>
+    <h1>Intern</h1>
+    <p>Bitte melden Sie sich mit Ihren Zugangsdaten an.</p>
+    <% if (error) { %>
+      <p class="login-error"><%= error %></p>
+    <% } %>
+    <form method="post" action="/login" class="login-form">
+      <label>
+        E-Mail-Adresse
+        <input type="email" name="email" required value="<%= typeof email !== 'undefined' ? email : '' %>" />
+      </label>
+      <label>
+        Passwort
+        <input type="password" name="password" required autocomplete="current-password" />
+      </label>
+      <button type="submit" class="button">Anmelden</button>
+    </form>
+  </section>
+</main>
+</body>
+</html>

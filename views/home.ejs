@@ -1,0 +1,120 @@
+<%- include('partials/head', { title: 'Ihr Küchenstudio in Landau' }) %>
+<%- include('partials/header') %>
+<section class="hero">
+  <div class="container hero-content">
+    <div>
+      <p class="hero-tag">Tradition seit 1978</p>
+      <h1>Ihr Küchenspezialist für Niederbayern</h1>
+      <p>
+        Küchen Obermeier steht für individuelle Planung, hochwertige Marken und einen Rundum-Service,
+        der Ihre Wunschküche sicher nach Hause bringt.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="/reklamation">Reklamation melden</a>
+        <a class="button button--ghost" href="tel:+4999516377">Jetzt anrufen</a>
+      </div>
+    </div>
+    <div class="hero-gallery" aria-hidden="true">
+      <div class="gallery-card gallery-card--primary"></div>
+      <div class="gallery-card gallery-card--secondary"></div>
+      <div class="gallery-card gallery-card--tertiary"></div>
+    </div>
+  </div>
+</section>
+<section class="intro" id="leistungen">
+  <div class="container split">
+    <div>
+      <h2>Geplante Küchen, die Ihren Alltag erleichtern</h2>
+      <p>
+        Wir begleiten Sie von der ersten Idee bis zur Montage. Mit viel Erfahrung, Liebe zum Detail und
+        zuverlässigen Partnern schaffen wir Räume, in denen Kochen Freude macht.
+      </p>
+      <ul class="checklist">
+        <li>Persönliche Beratung im Studio oder bei Ihnen Zuhause</li>
+        <li>3D-Planung mit fotorealistischen Ansichten</li>
+        <li>Eigene Monteure für eine fachgerechte Montage</li>
+        <li>Service und Ersatzteilbeschaffung auch Jahre nach dem Kauf</li>
+      </ul>
+    </div>
+    <div class="intro-card">
+      <h3>Unsere Leistungen im Überblick</h3>
+      <ul>
+        <li>Küchenplanung &amp; Beratung</li>
+        <li>Modernisierung &amp; Austauschgeräte</li>
+        <li>Elektro- und Sanitärkoordination</li>
+        <li>Eigener Kundendienst</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="highlight" id="marken">
+  <div class="container">
+    <h2>Starke Marken – langlebige Küchen</h2>
+    <p>
+      Wir setzen auf bewährte Hersteller wie Häcker, Bora, Siemens, Neff und viele mehr. So garantieren wir
+      Qualität und Ersatzteilverfügbarkeit auf lange Sicht.
+    </p>
+    <div class="brand-grid">
+      <span>Häcker</span>
+      <span>Bora</span>
+      <span>Siemens</span>
+      <span>Miele</span>
+      <span>Neff</span>
+      <span>Franke</span>
+    </div>
+  </div>
+</section>
+<section class="team" id="team">
+  <div class="container split">
+    <div>
+      <h2>Ein Familienbetrieb mit Handschlagqualität</h2>
+      <p>
+        Küchen Obermeier ist ein inhabergeführtes Unternehmen. Wir kennen unsere Kunden, hören zu und finden
+        Lösungen – auch wenn es mal schnell gehen muss. Unser Team aus Planung, Backoffice und Montage
+        arbeitet Hand in Hand.
+      </p>
+    </div>
+    <div class="team-card">
+      <blockquote>
+        „Wir wollen, dass Sie lange Freude an Ihrer Küche haben. Deshalb denken wir an morgen – schon bei der Planung.“
+      </blockquote>
+      <p class="team-card__name">Martin Obermeier, Inhaber</p>
+    </div>
+  </div>
+</section>
+<section class="cta">
+  <div class="container cta-grid">
+    <div>
+      <h2>Servicefall? Wir kümmern uns darum.</h2>
+      <p>
+        Mit unserem digitalen Reklamationsformular erhalten wir alle Informationen, die wir für eine schnelle
+        Bearbeitung benötigen. Für Sie bedeutet das: weniger Rückfragen und schnellere Lösungen.
+      </p>
+      <a class="button" href="/reklamation">Jetzt Reklamation melden</a>
+    </div>
+    <div class="cta-feature">
+      <ul>
+        <li>Ticketnummer zur Nachverfolgung</li>
+        <li>Mehrere Reklamationen in einem Vorgang</li>
+        <li>Fotos direkt mit dem Smartphone hochladen</li>
+        <li>Automatische Bestätigung per E-Mail</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section class="map-section">
+  <div class="container">
+    <h2>So finden Sie zu uns</h2>
+    <p>Unser Küchenstudio liegt direkt an der B20 in Landau an der Isar – mit vielen Parkplätzen vor der Tür.</p>
+    <div class="map-embed">
+      <iframe
+        title="Anfahrt Küchen Obermeier"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2651.020797892427!2d12.686372699999999!3d48.6676338!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4775934bfad49a2b%3A0x6d70144d7f5aa07e!2sK%C3%BCchen%20Obermeier!5e0!3m2!1sde!2sde!4v1715706600000!5m2!1sde!2sde"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+      ></iframe>
+    </div>
+  </div>
+</section>
+<%- include('partials/footer', { year }) %>
